@@ -14,8 +14,8 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       ...config,
       slug: `${config.slug}_dev`,
       name: `${config.name}_dev`,
-      ios: { ...config.ios, bundleIdentifier: `${config.ios?.bundleIdentifier}_dev` },
-      android: { ...config.android, package: `${config.android?.package}_dev` },
+      ios: { ...config.ios, bundleIdentifier: `${config.ios?.bundleIdentifier}.dev` },
+      android: { ...config.android, package: `${config.android?.package}.dev` },
     }
   }
 }
