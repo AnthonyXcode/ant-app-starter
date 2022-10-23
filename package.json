@@ -4,10 +4,20 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "start:pro": "ENVIRONMENT=production expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "jest --watchAll"
+    "eject": "expo eject",
+    "test": "jest --watchAll",
+    "build:ios": "expo build:ios --no-wait",
+    "build:ios:pro": "ENVIRONMENT=production expo build:ios --no-wait",
+    "build:android": "expo build:android --no-wait",
+    "build:android:pro": "ENVIRONMENT=production expo build:android --no-wait",
+    "publish": "expo publish",
+    "publish:web": "expo build:web && firebase deploy",
+    "publish:pro": "ENVIRONMENT=production expo publish",
+    "publish:pro:web": "ENVIRONMENT=production expo build:web && firebase deploy"
   },
   "jest": {
     "preset": "jest-expo"
@@ -15,12 +25,14 @@
   "dependencies": {
     "@expo/react-native-action-sheet": "^3.14.0",
     "@expo/vector-icons": "^13.0.0",
+    "@expo/webpack-config": "^0.17.0",
     "@react-native-async-storage/async-storage": "^1.17.10",
     "@react-native-community/datetimepicker": "^6.5.2",
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
     "@reduxjs/toolkit": "^1.8.6",
+    "apisauce": "^2.1.6",
     "expo": "~46.0.16",
     "expo-asset": "~8.6.1",
     "expo-constants": "~13.2.4",
@@ -31,7 +43,9 @@
     "expo-status-bar": "~1.4.0",
     "expo-system-ui": "~1.3.0",
     "expo-web-browser": "~11.0.0",
+    "i18n-js": "^4.1.1",
     "lottie-react-native": "^5.1.4",
+    "moment": "^2.29.4",
     "ramda": "^0.28.0",
     "react": "18.0.0",
     "react-datepicker": "^4.8.0",
