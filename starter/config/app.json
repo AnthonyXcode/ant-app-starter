@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ant-app-starter",
-    "slug": "ant_app_starter",
+    "name": "example_dev",
+    "slug": "example_dev",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,14 +19,14 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.antappstarter.app.dev",
+      "bundleIdentifier": "com.example.app.dev",
       "supportsTablet": true,
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "package": "com.antappstarter.app.dev",
+      "package": "com.example.app.dev",
       "versionCode": 0,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
