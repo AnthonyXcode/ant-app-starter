@@ -3,8 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@starter/*": [
-        "./starter/*"
+      "@starter": [
+        "./starter/index.tsx"
       ],
       "@slice/*": [
         "./redux/slice/*"
