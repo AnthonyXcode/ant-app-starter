@@ -18,7 +18,7 @@ const persistConfig = (blacklist?: string[]) => ({
 
 const persistedReducer = (reducers: { [key: string]: Reducer }, blacklist?: string[]) => persistReducer(persistConfig(blacklist), combineReducers({ ...reducers, example: exampleSlice.reducer }))
 
-export default (reducers: { [key: string]: Reducer }, blacklist?: string[]) => {
+export const redux = ({ reducers, blacklist }: { reducers: { [key: string]: Reducer }, blacklist?: string[] }) => {
   const store = configureStore({
     reducer: persistedReducer(reducers, blacklist),
     middleware: [...getDefaultMiddleware({ serializableCheck: false }), logger],
