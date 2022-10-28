@@ -26,3 +26,5 @@ export const redux = ({ reducers, blacklist }: { reducers: { [key: string]: Redu
   const persistor = persistStore(store)
   return { store, persistor }
 }
+
+export const presistSelector = (state: any): {rehydrated: boolean} => state._persist

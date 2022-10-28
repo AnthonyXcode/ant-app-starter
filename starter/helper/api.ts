@@ -1,7 +1,7 @@
 import { create } from 'apisauce'
 
 export type Secret = {
-  plainTextToken: string
+  plainTextToken?: string
 }
 
 export const urlencodedHeader = {
