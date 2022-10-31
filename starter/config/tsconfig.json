@@ -7,10 +7,10 @@
         "./starter/index.tsx"
       ],
       "@slice/*": [
-        "./redux/slice/*"
+        "./reducers/slice/*"
       ],
       "@slice": [
-        "./redux/slice/index.ts"
+        "./reducers/slice/index.ts"
       ],
       "@screens/*": [
         "./screens/*"

@@ -19,7 +19,7 @@ module.exports = function (api) {
           root: ['./'],
           alias: {
             "@starter": './starter',
-            "@slice": './redux/slice',
+            "@slice": './reducers/slice',
             "@screens": './screens',
             "@components": './components',
             "@hooks": './hooks'
