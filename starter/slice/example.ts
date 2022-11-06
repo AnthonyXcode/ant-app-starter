@@ -2,13 +2,13 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { StoreStatus } from '../redux/type'
 
 
-export type ExampleState = {
+export type IExampleState = {
   status: StoreStatus
 }
 
 export const exampleApiRequest = createAsyncThunk('example/api/action', async () => {})
 
-const initialState: ExampleState = {
+const initialState: IExampleState = {
   status: 'idle',
 }
 

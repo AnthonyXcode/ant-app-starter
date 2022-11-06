@@ -44,9 +44,7 @@ export const FormDate = ({
   const onChange = (event: any, selectedDate: Date) => {
     const currentDate = selectedDate || date
     setIsShow(Platform.OS === 'ios')
-    if (mode === 'date' && setTime) {
-      setTime(currentDate)
-    }
+    setTime(currentDate)
     setDate(currentDate)
   }
 
