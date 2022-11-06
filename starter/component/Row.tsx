@@ -6,7 +6,7 @@ import {
   View,
   ViewStyle
   } from 'react-native'
-import { ReactElement, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { size } from '../themes/size'
 import { Spacing } from './Spacing'
 import { Text } from './Text'
@@ -15,8 +15,8 @@ import { Text } from './Text'
 interface IRowProps {
   title?: string
   description?: string
-  leftIcon?: ReactElement
-  rightIcon?: ReactElement
+  leftIcon?: ReactNode
+  rightIcon?: ReactNode
   children?: ReactNode
   otherContent?: ReactNode
   onPress?: () => void

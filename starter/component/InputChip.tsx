@@ -1,5 +1,5 @@
 import { colors } from '../themes/colors'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 import { size } from '../themes/size'
 import {
   StyleProp,
@@ -15,8 +15,8 @@ type IType = 'hightLight' | 'outLine'
 
 interface IInputChipProps {
   title: string
-  left?: ReactElement
-  right?: ReactElement
+  left?: ReactNode
+  right?: ReactNode
   type?: IType
   onPress?: () => void
 }

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 import { size } from '../themes/size'
 import { StyleSheet, View } from 'react-native'
 import { Text } from './Text'
@@ -7,7 +7,7 @@ import { Text } from './Text'
 interface IProps {
   title: string
   description?: string
-  rightIcon?: ReactElement
+  rightIcon?: ReactNode
   onPress?: () => void
 }
 
