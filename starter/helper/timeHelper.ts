@@ -17,3 +17,8 @@ export const getMonthDateRange = (year: number, month: number) => {
   // make sure to call toDate() for plain JavaScript date type
   return { start: startDate.toDate(), end: endDate.toDate() }
 }
+
+export const getHorsDiff = (start: string | Date, end: string | Date) => {
+  const duration = moment.duration(moment(end).diff(start))
+  return duration.asHours()
+}
