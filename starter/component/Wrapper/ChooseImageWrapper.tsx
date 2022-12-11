@@ -1,6 +1,6 @@
 import * as ImagePicker from 'expo-image-picker'
 import React from 'react'
-import { Alert, TouchableWithoutFeedback } from 'react-native'
+import { Alert, Platform, TouchableWithoutFeedback } from 'react-native'
 import { getFilename } from '../../helper/utility'
 import { pathOr } from 'ramda'
 import { t } from '../../helper/i18n'
@@ -68,7 +68,7 @@ export const ChooseImageWrapper = ({ onSetImage, children }: IProps) => {
     resultHander(result)
   }
 
-  const onPressUpload = () => {
+  const onPressUpload = async () => {
     if (!onSetImage) {
       return
     }
