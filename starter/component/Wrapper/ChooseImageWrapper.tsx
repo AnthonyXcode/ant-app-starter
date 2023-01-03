@@ -8,7 +8,7 @@ import { useActionSheet } from '@expo/react-native-action-sheet'
 
 
 
-export type IImageOutput = ImagePicker.ImagePickerResult & { name: string; base64: string }
+export type IImageOutput = ImagePicker.ImagePickerResult & { name?: string; base64: string }
 
 interface IProps {
   onSetImage?: (image: IImageOutput) => void
@@ -72,26 +72,30 @@ export const ChooseImageWrapper = ({ onSetImage, children }: IProps) => {
     if (!onSetImage) {
       return
     }
-    const options = [t('takePhoto'), t('chooseFromLibrary'), t('cancel')]
-    const cancelButtonIndex = 2
-    showActionSheetWithOptions(
-      {
-        options,
-        cancelButtonIndex,
-      },
-      async (index) => {
-        switch (index) {
-          case 0:
-            await takePhoto()
-            break
-          case 1:
-            await pickImage()
-            break
-          default:
-            break
+    if (Platform.OS === 'web') {
+      await pickImage()
+    } else {
+      const options = [t('takePhoto'), t('chooseFromLibrary'), t('cancel')]
+      const cancelButtonIndex = 2
+      showActionSheetWithOptions(
+        {
+          options,
+          cancelButtonIndex,
+        },
+        async (index) => {
+          switch (index) {
+            case 0:
+              await takePhoto()
+              break
+            case 1:
+              await pickImage()
+              break
+            default:
+              break
+          }
         }
-      }
-    )
+      )
+    }
   }
 
   return <TouchableWithoutFeedback onPress={onPressUpload}>{children}</TouchableWithoutFeedback>

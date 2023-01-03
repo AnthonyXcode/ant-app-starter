@@ -45,7 +45,7 @@ export const FormImage = ({ onPickImage, placeHolder, containerStyle, error, tit
         <View style={[styles.optionContainer, input]}>
           {image ? (
             <InputChip
-              title={image.name}
+              title={image.name ?? ''}
               onPress={onClearImage}
               right={<AntDesign name='close' size={size[4]} color='black' />}
             />

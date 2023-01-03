@@ -1,5 +1,6 @@
 import useCachedResources from './hooks/useCachedResources'
 import useColorScheme from './hooks/useColorScheme'
+import { ActionSheetProvider } from '@expo/react-native-action-sheet'
 import { Navigator } from './navigation'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
@@ -16,14 +17,16 @@ export default function App() {
     return null
   } else {
     return (
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <SafeAreaProvider>
-            <Navigator />
-            <StatusBar />
-          </SafeAreaProvider>
-        </PersistGate>
-      </Provider>
+      <ActionSheetProvider>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <SafeAreaProvider>
+              <Navigator />
+              <StatusBar />
+            </SafeAreaProvider>
+          </PersistGate>
+        </Provider>
+      </ActionSheetProvider>
     )
   }
 }
