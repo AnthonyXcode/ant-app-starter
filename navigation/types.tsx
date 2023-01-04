@@ -10,6 +10,7 @@ export type StackParamList = {
   InputChip: undefined
   Badge: undefined
   Form: undefined
+  Alert: undefined
 }
 
 export type StackScreenProps<Screen extends keyof StackParamList> = NativeStackScreenProps<

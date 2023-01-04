@@ -13,5 +13,6 @@ export const linking = {
     InputChip: 'inputChip',
     Badge: 'badge',
     Form: 'form',
+    Alert: 'alert'
   },
 }

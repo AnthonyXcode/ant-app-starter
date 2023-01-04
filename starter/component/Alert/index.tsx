@@ -1,1 +1,3 @@
-export { Alert } from 'react-native'
+import CustomAlert from './components'
+
+export const Alert = CustomAlert

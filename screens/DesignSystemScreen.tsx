@@ -13,6 +13,7 @@ export default function DesignSystemScreen({ navigation }: StackScreenProps<'Des
     { id: 'Badge', title: 'Badge' },
     { id: 'Form', title: 'Form' },
     { id: 'Row', title: 'Row' },
+    { id: 'Alert', title: 'Alert'}
   ]
   return (
     <View style={styles.container}>
