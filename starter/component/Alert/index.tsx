@@ -1,3 +1,2 @@
-import CustomAlert from './components'
-
-export const Alert = CustomAlert
+export { useAlert } from './context'
+export { AlertProvider } from './AlertProvider'

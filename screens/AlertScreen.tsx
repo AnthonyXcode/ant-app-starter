@@ -1,18 +1,20 @@
 import {
-    Alert,
     Button,
     size,
-    Spacing
+    Spacing,
+    useAlert
     } from '../starter/index'
 import { StyleSheet, View } from 'react-native'
 
 export const AlertScreen = () => {
+    const { alert, prompt } = useAlert()
+    
     const onPressButtonAlert = () => {
-        Alert.alert('title', 'message', [{ text: 'ok' }])
+        alert('title', 'message', [{ text: 'ok' }])
     }
 
     const onPressButtonsAlert = () => {
-        Alert.alert('title', 'message', [{ text: 'yes' }, { text: 'no' }])
+        alert('title', 'message', [{ text: 'yes' }, { text: 'no' }])
     }
 
     return <View style={styles.container}>

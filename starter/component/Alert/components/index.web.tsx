@@ -1,6 +1,9 @@
 import { AlertButton, AlertOptions, AlertStatic } from 'react-native'
+import { FC } from 'react'
+import { forwardRef } from 'react'
 
-const Alert: AlertStatic = ({
+
+const RNAlert: AlertStatic = ({
     alert: (title: string, message?: string, buttons?: AlertButton[], options?: AlertOptions) => {
         console.log(title)
     },
@@ -10,4 +13,8 @@ const Alert: AlertStatic = ({
     }
 })
 
-export default Alert
+export default RNAlert
+
+export const Alert: FC = forwardRef(() => {
+    return <></>
+})
