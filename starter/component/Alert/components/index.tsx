@@ -1,12 +1,12 @@
+import React, { forwardRef, Ref } from 'react'
+import { useImperativeHandle } from 'react'
 import {
-    Alert as RNAlert,
     AlertButton,
     AlertOptions,
     AlertStatic,
-    AlertType
-    } from 'react-native'
-import { forwardRef, Ref } from 'react'
-import { useImperativeHandle } from 'react'
+    AlertType,
+    Alert as RNAlert,
+} from 'react-native'
 
 
 export const Alert = forwardRef((props: { children: React.ReactNode }, ref: Ref<AlertStatic>) => {
