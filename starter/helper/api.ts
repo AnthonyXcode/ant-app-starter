@@ -22,6 +22,5 @@ export const api = (secret?: Secret) => {
   return create({
     baseURL: 'https://mankee.softether.net/erunapitest/api.asmx',
     headers,
-    withCredentials: true,
   })
 }
