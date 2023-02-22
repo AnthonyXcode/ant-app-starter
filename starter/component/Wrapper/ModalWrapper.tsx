@@ -1,30 +1,31 @@
-import { colors } from '../../themes/colors'
 import {
   FC,
   ReactNode,
   useEffect,
   useState
-  } from 'react'
-import { Icons } from '../../themes/icons'
+} from 'react'
 import {
   Keyboard,
   Modal,
   Pressable,
   StyleSheet,
   View
-  } from 'react-native'
-import { size } from '../../themes/size'
-import { Text } from '../Text'
+} from 'react-native'
 
+import { Icons } from '../../themes/icons'
+import { Text } from '../Text'
+import { colors } from '../../themes/colors'
+import { size } from '../../themes/size'
 
 interface IModalWrapperProps {
   isVisible: boolean
   title: string
   hideModel: () => void
   children: ReactNode
+  enableBackgrounDismiss?: boolean
 }
 
-export const ModalWrapper: FC<IModalWrapperProps> = ({ title, isVisible, hideModel, children }) => {
+export const ModalWrapper: FC<IModalWrapperProps> = ({ title, isVisible, hideModel, children, enableBackgrounDismiss = true }) => {
   const [isShowingKeyboard, setIsShowingKeyboard] = useState<boolean>(false)
 
   useEffect(() => {
@@ -55,7 +56,7 @@ export const ModalWrapper: FC<IModalWrapperProps> = ({ title, isVisible, hideMod
   return (
     <Modal animationType='fade' transparent={true} visible={isVisible}>
       <View style={styles.background}></View>
-      <Pressable style={{ flex: 1 }} onPress={onPressBackground}>
+      <Pressable style={{ flex: 1 }} onPress={enableBackgrounDismiss ? onPressBackground : undefined}>
         <View style={styles.container}>
           <Pressable>
             <View style={styles.contentContainer}>
@@ -102,5 +103,6 @@ const styles = StyleSheet.create({
     borderColor: colors.gray600,
     borderWidth: 1,
     borderRadius: size[2],
+    maxHeight: size.screenHeight - size[12]
   },
 })
