@@ -19,14 +19,14 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.example.app.dev",
+      "bundleIdentifier": "com.example.app",
       "supportsTablet": true,
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "package": "com.example.app.dev",
+      "package": "com.example.app",
       "versionCode": 0,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
