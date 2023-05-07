@@ -8,6 +8,11 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       name: `${config.name}`,
       ios: { ...config.ios, bundleIdentifier: `${config.ios?.bundleIdentifier}` },
       android: { ...config.android, package: `${config.android?.package}` },
+      extra: {
+        eas: {
+          projectId: ""
+        }
+      }
     }
   } else {
     return {
@@ -16,6 +21,11 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       name: `${config.name}_dev`,
       ios: { ...config.ios, bundleIdentifier: `${config.ios?.bundleIdentifier}.dev` },
       android: { ...config.android, package: `${config.android?.package}.dev` },
+      extra: {
+        eas: {
+          projectId: ""
+        }
+      }
     }
   }
 }
