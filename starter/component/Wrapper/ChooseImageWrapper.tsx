@@ -2,13 +2,10 @@ import * as ImagePicker from 'expo-image-picker'
 import React from 'react'
 import { Alert, Platform, TouchableWithoutFeedback } from 'react-native'
 import { getFilename } from '../../helper/utility'
-import { pathOr } from 'ramda'
 import { t } from '../../helper/i18n'
 import { useActionSheet } from '@expo/react-native-action-sheet'
 
-
-
-export type IImageOutput = ImagePicker.ImagePickerResult & { name?: string; base64: string }
+export type IImageOutput = ImagePicker.ImagePickerAsset & { name?: string}
 
 interface IProps {
   onSetImage?: (image: IImageOutput) => void
@@ -19,11 +16,10 @@ export const ChooseImageWrapper = ({ onSetImage, children }: IProps) => {
   const { showActionSheetWithOptions } = useActionSheet()
 
   const resultHander = (result: ImagePicker.ImagePickerResult) => {
-    const uri: string = pathOr('', ['uri'], result)
-    if (uri) {
-      const name = getFilename(uri)
-      // @ts-ignore
-      onSetImage?.({ ...result, name })
+    const uri: string = result.assets?.[0].uri ?? ''
+    if (result.assets?.[0]) {
+      const name = Platform.OS === 'web' ? 'web_image' : getFilename(uri)
+      onSetImage?.({ ...result.assets[0], name })
     }
   }
 
